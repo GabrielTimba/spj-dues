@@ -1,0 +1,11 @@
+#Dependences
+node_modules
+package-lock.json
+
+#secrets
+.wwebjs_auth
+secretes.js
+.env
+
+#Build
+build
