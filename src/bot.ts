@@ -7,7 +7,7 @@ import { getQuotes } from './quotes'
 dotenv.config();
 
 const client = new Client({
-  authStrategy: new LocalAuth()
+  //authStrategy: new LocalAuth()
 });
 
 client.on('qr', qr => {
