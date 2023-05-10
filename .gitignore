@@ -4,8 +4,9 @@ package-lock.json
 
 #secrets
 .wwebjs_auth
-secretes.js
+secretes.json
 .env
 
 #Build
 build
+.vercel

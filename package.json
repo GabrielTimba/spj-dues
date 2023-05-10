@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start":"node build/bot.js",
     "dev": "ts-node-dev --ignore-watch node_modules src/bot.ts",
     "build": "tsup src --out-dir build"
   },
