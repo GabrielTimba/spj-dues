@@ -34,7 +34,7 @@ export async function getQuotes(id:string): Promise<QuoteType>{
   const rows = await googleSheets.spreadsheets.values.get({
     auth,
     spreadsheetId,
-    range:"2022!A3:Z"
+    range:"2023!A3:Z"
   })  
 
   const rowByID= rows.data.values?.filter((row)=>row[0].toLocaleUpperCase()===id.toLocaleUpperCase())

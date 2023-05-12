@@ -28,7 +28,7 @@ client.on('message', async message => {
 		client.sendMessage(message.from, 'Indique o seu ID no seguinte formato *ID:seu id*\n(Exemplo ID:45adc2)');
 	}
 	else if(message.body === '2') {
-		client.sendMessage(message.from, '*TheDue* é uma plataforma que permite a consulta do extracto de quotas da SPJ de XIBOMANA de forma instantanea');
+		client.sendMessage(message.from, '*TheDue* é uma plataforma que permite a consulta do extracto de quotas da SPJ de XIBOMANA de forma instantânea');
 	}
 	else if(id[0].toString().toUpperCase()==='ID'){
 		const quote=await getQuotes(id[1])
@@ -52,14 +52,14 @@ client.on('message', async message => {
 			);
 		}else{
 			client.sendMessage(message.from, 'ID não encontrado.')
-			client.sendMessage(message.from, 'Indique o seu ID no seguinte formato *ID:seu id*\n(Exemplo ID:45adc2)');
+			client.sendMessage(message.from, 'Indique o seu ID no seguinte formato *ID:seu id*\n(Exemplo ID:45adc)');
 		}
 
 	}
 	else {
 		client.sendMessage(message.from, 
 			`Olá *${contact.pushname}*,seja bem vindo ao *TheDue*\n\n`+
-			'Selecione uma das opções \n'+
+			'Escolha uma das opções \n'+
 			'1.Consultar o extrato de quotas da SPJ \n'+
 			'2. Informações da plataforma \n'
 		);
