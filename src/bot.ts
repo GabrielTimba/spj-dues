@@ -35,7 +35,7 @@ client.on('message', async message => {
 
 		if(Object.keys(quote).length !== 0){
 			client.sendMessage(message.from, 
-				'*Extrato de quotas*\n\n'+
+				'*Extracto de quotas*\n\n'+
 				`Nome:${quote.name}\n`+
 				`Janeiro: ${quote.jan.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN \n`+
 				`Fevereiro:${quote.feb.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN\n`+
@@ -60,7 +60,7 @@ client.on('message', async message => {
 		client.sendMessage(message.from, 
 			`Olá *${contact.pushname}*,seja bem vindo ao *TheDue*\n\n`+
 			'Escolha uma das opções \n'+
-			'1.Consultar o extrato de quotas da SPJ \n'+
+			'1.Consultar o extracto de quotas da SPJ \n'+
 			'2. Informações da plataforma \n'
 		);
 	}
