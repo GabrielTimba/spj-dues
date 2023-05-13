@@ -32,6 +32,7 @@ client.on('message', async message => {
 	}
 	else if(id[0].toString().toUpperCase()==='ID'){
 		const quote=await getQuotes(id[1])
+		let msg;
 
 		if(Object.keys(quote).length !== 0){
 			client.sendMessage(message.from, 
@@ -48,8 +49,30 @@ client.on('message', async message => {
 				`Setembro:${quote.sept.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN \n`+
 				`Otubro:${quote.oct.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN\n`+
 				`Novembro:${quote.nov.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN \n`+
-				`Dezembro:${quote.dec.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN\n`
+				`Dezembro:${quote.dec.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN\n\n`+
+				`*Total*:${quote.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} MZN\n`
 			);
+			
+			/** 
+			 * Some funny messages acording with the amount quote credit
+			 *  TO UPDATE:change fixed value with % and total value specificated on .env file
+			 */
+			if(quote.total==0){
+				msg='Hmmm irmão 😞 vamos lá pagar quotas'
+			}else if(quote.total<60 && quote.total!==0){
+				msg='OK nem :-) irmão, já deu o seu pontapé de partida continue pagando as quotas '
+			}else if(quote.total<120 && quote.total>60){
+				msg='Hey irmão! Continue pagando quotas não desista.'
+			}else if(quote.total<180 && quote.total>120){
+				msg='Vamos que vamos irmão um pouco mais chega lá 😘'
+			}else if(quote.total>180 && quote.total<240){
+				msg='OK Ok Ok irmão, está quase lá mais um pouquinho de esforço chegamos🎈. '
+			}else {
+				msg='Muito obrigado 🎉🎊🎉 pelo seu comprometimendo irmão✨.'
+			}
+
+			client.sendMessage(message.from, msg)
+
 		}else{
 			client.sendMessage(message.from, 'ID não encontrado.')
 			client.sendMessage(message.from, 'Indique o seu ID no seguinte formato *ID:seu id*\n(Exemplo ID:45adc)');

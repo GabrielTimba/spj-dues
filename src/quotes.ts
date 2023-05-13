@@ -2,18 +2,19 @@ import {google} from 'googleapis'
 
 type QuoteType ={
   name:string,
-  jan:Number,
-  feb:Number,
-  mar:Number,
-  apr:Number,
-  may:Number,
-  june:Number,
-  july:Number,
-  aug:Number,
-  sept:Number,
-  oct:Number,
-  nov:Number,
-  dec:Number
+  jan:number,
+  feb:number,
+  mar:number,
+  apr:number,
+  may:number,
+  june:number,
+  july:number,
+  aug:number,
+  sept:number,
+  oct:number,
+  nov:number,
+  dec:number,
+  total:number
 }
 
 export async function getQuotes(id:string): Promise<QuoteType>{
@@ -61,6 +62,7 @@ export async function getQuotes(id:string): Promise<QuoteType>{
     quote.oct=item[11]?Number(item[11]):0
     quote.nov=item[12]?Number(item[12]):0
     quote.dec=item[13]?Number(item[13]):0
+    quote.total=Number(item[14])
   })
 
   return quote
